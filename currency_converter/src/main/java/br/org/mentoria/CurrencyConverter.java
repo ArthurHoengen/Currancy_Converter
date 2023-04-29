@@ -12,7 +12,7 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 
-public class CurrancyConverter {
+public class CurrencyConverter {
     public static void main(String[] args) throws Exception {
 
         Scanner scanner = new Scanner(System.in);
