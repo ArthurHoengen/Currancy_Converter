@@ -1,4 +1,4 @@
-# Currancy_Converter
+# Currency_Converter
 
 **Descrição:** Esse repositório foi criado na intenção de desenvolver um software capaz de converter moedas em tempo real. Meu objetivo é concluir esse projeto em 6 dias.
 
