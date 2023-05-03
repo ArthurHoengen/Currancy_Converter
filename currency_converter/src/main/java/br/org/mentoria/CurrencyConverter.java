@@ -7,8 +7,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import java.util.Scanner;
-import java.util.Map;
 
+import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
@@ -40,8 +40,13 @@ public class CurrencyConverter {
 
         System.out.println(jsonConversao.toString());
 
-        Map<String, Object> json = new Gson().fromJson(jsonConversao.toString(), Map.class);
-        Converter converter = new Gson().fromJson(new Gson().toJson(json.get(code + codein)), Converter.class);
+        JSONObject json = new JSONObject(jsonConversao.toString());
+        Converter converter = new Gson().fromJson(json.get(code + codein).toString(), Converter.class);
+
+        System.out.println(json.get(code + codein));
+
+        //Map<String, Object> json = new Gson().fromJson(jsonConversao.toString(), Map.class);
+        //Converter converter = new Gson().fromJson(new Gson().toJson(json.get(code + codein)), Converter.class);
         // ** Consumindo API externa
 
         float vlrConvertido = value * Float.parseFloat(converter.getHigh());
