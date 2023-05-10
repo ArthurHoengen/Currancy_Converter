@@ -12,18 +12,29 @@ import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
-public class CurrencyConverter {
-    public static void main(String[] args) throws Exception {
+import br.org.mentoria.entitys.Converter;
 
+public class CurrencyConverter {
+
+    private String fromIso;
+    private String toIso;
+    private String value;
+
+    public void getUserInput(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Caso desconheça os códigos consulte: 'https://pt.wikipedia.org/wiki/ISO_4217'");
         System.out.println("Código iso da moeda a converter:");
-        String code = scanner.next().toUpperCase();
+        this.fromIso = scanner.next().toUpperCase();
         System.out.println("Quanto você precisa converter dessa moeda?");
-        float value = Float.parseFloat(scanner.next());
+        this.value = Float.parseFloat(scanner.next());
         System.out.println("Código iso da moeda convertida:");
-        String codein = scanner.next().toUpperCase();
+        this.toIso = scanner.next().toUpperCase();
         scanner.close();
+    }
+    
+    public void init(){
+
+        
 
         // ** Consumindo API externa
         URL url = new URL("https://economia.awesomeapi.com.br/last/" + code + "-" + codein + "");

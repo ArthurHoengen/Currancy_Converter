@@ -1,4 +1,4 @@
-package br.org.mentoria;
+package br.org.mentoria.entitys;
 
 public class Converter {
     
